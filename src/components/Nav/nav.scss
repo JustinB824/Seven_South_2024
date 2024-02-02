@@ -1,0 +1,21 @@
+@import './../../App.scss';
+
+nav {
+    > ul {
+        display: flex;
+        list-style: none;
+
+        > li {
+            margin: 0 0 0 15px;
+
+            > a {
+                color: $SSgreen;
+                text-decoration: none;
+                
+                &:hover, &:active {
+                    color: $SSgreenHighlight
+                }
+            }
+        }
+    }
+}

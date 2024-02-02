@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import "the-new-css-reset/css/reset.css";
-import './App.css';
+// import "the-new-css-reset/css/reset.css";
+import './App.scss';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Intro from './components/Intro';
 import Menu from './components/Menu';
 import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
   return (

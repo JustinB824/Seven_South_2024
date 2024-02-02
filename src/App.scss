@@ -1,0 +1,12 @@
+@import-normalize; /* bring in normalize.css styles */
+
+$SSgreen: #00a651;
+$SSgreenHighlight: #40BC7D;
+$SSorange: #d55e33;
+$SSblack: #000;
+$SSwhite: #fff;
+
+.site_container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
