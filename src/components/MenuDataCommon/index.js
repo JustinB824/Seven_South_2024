@@ -34,24 +34,23 @@ function MenuDataCommon(props) {
     }, [])
 
     const menuLayout = menuList.map((items) => 
-        <div key={items.id}>
+        <li key={items.id}>
             {items.name && <h4>{items.name}</h4>}
             {items.price && <p>{items.price}</p>}
             {items.description && <p>{items.description}</p>}
-            {items.addText1 && <p>{items.addText1}</p>}
-            {items.addPrice1 && <p>{items.addPrice1}</p>}
-            {items.addText2 && <p>{items.addText2}</p>}
-            {items.addPrice2 && <p>{items.addPrice2}</p>}
-            {items.addText3 && <p>{items.addText3}</p>}
-            {items.addPrice3 && <p>{items.addPrice3}</p>}
-        </div>
+            {items.addText1 && <p><span>{items.addText1}</span> <span>{items.addPrice1}</span></p>}
+            {items.addText2 && <p><span>{items.addText2}</span> <span>{items.addPrice2}</span></p>}
+            {items.addText3 && <p><span>{items.addText3}</span> <span>{items.addPrice3}</span></p>}
+        </li>
     )
-    
+
     return (
-        <section>
+        <div>
             <h3>{props.title}</h3>
-            {menuLayout}
-        </section>
+            <ul>
+                {menuLayout}
+            </ul>
+        </div>
     )
 }
 
