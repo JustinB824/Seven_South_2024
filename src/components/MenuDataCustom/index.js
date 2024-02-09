@@ -15,19 +15,17 @@ function MenuDataCustom(props) {
           const cheeseList = []
           const toppingsList = []
           const condimentsList = []
-          const flavoredList = []
           result.values.forEach((item, i) => {
             if (item[0] !== '') {
                 let menuObj = {'id': i, 'bread': item[0], 'price': item[1]}
                 breadItemList.push(menuObj)
             }
-            if (item[2] !== '') { meatList.push(item[2]) }
-            if (item[3] !== '') { cheeseList.push(item[3]) }
-            if (item[4] !== '') { toppingsList.push(item[4]) }
-            if (item[5] !== '') { condimentsList.push(item[5]) }
-            if (item[6] !== '') { flavoredList.push(item[6]) }
+            meatList.push(item[2])
+            cheeseList.push(item[3])
+            toppingsList.push(item[4])
+            condimentsList.push(item[5])
           })
-          customList.push(meatList, cheeseList, toppingsList, condimentsList, flavoredList)
+          customList.push(meatList.filter(item => item), cheeseList.filter(item => item), toppingsList.filter(item => item), condimentsList.filter(item => item))
           breadItemList.shift()
           setBreadList(breadItemList)
           setMenuList(customList)
@@ -35,25 +33,32 @@ function MenuDataCustom(props) {
     }, [])
 
     const breadLayout = breadList.map((items) => 
-        <p key={items.id}>{items.bread} <span>{items.price}</span></p>
+        <li key={items.id}>{items.bread} <span>{items.price}</span></li>
     )
     const menuLayout = menuList.map((categories, i) => (
         <div key={i}>
-            {categories.map((item, i) => (
-                (i === 0) ? <h4>{item}</h4> : <p>{item}</p>
-            ))}
+            <h4>{categories[0]}</h4>
+            <ul>
+                {categories.slice(1).map((item, i) => (
+                    <li key={i}>{item}</li>
+                ))}
+            </ul>
         </div>
     ))
 
     return (
-        <section>
+        <div>
             <h3>{props.title}</h3>
             <div>
                 <h4>Bread</h4>
-                {breadLayout}
+                <ul>
+                    {breadLayout}
+                </ul>
             </div>
-            {menuLayout}
-        </section>
+            <div>
+                {menuLayout}
+            </div>
+        </div>
     )
 }
 
