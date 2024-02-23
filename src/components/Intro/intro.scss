@@ -1,14 +1,66 @@
+@import './../../styles/variables.scss';
 
 #intro {
 
     .hero_image {
         width: 100%;
-        height: 400px;
-        background: url('./img/storefront.jpg') no-repeat center center;
+        height: 330px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./img/storefront.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
+
+        > h1 {
+            max-width: 80%;
+            margin: 0 0 10px;
+            font-family: CopperPlateBold, serif;
+            color: $SSblack;
+            text-shadow: 2px 2px $SSgreen;
+            font-size: 3.0rem;
+            line-height: 2.8rem;
+        }
+    
+        > h2 {
+            max-width: 80%;
+            margin: 0;
+            color: $SSblack;
+            text-shadow: 1px 1px $SSgreen;
+            font-size: 1.2rem;
+        }
+    }
+
+    .logo_image {
+        display: block;
+        width: 150px;
+        margin: 10px 0 20px;
     }
 
     h3 {
-        white-space: pre-line;
+        margin: 5px 0;
+        font-size: 1.2rem;
+
+        .phone_num {
+            display: block;
+            color: $SSorange;
+        }
+    }
+
+    p {
+        margin: 5px 0 10px;
+        font-size: 1rem;
+    }
+
+    h4 {
+        margin: 20px 0 5px;
+        font-size: 1.1rem;
+    }
+
+    .hours {
+        margin: 5px 0;
+        font-size: 1rem;
     }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import MenuDataCommon from '../MenuDataCommon'
 import MenuDataCustom from '../MenuDataCustom'
 import sections from './sections'
+import './menu.scss'
 
 // price={blah} for anything other than a string
 function Menu() {
@@ -24,9 +25,12 @@ function Menu() {
 
     )
     return (
-        <section id='menu'>
-            <h2>Our Menu</h2>
-            {menuSections}
+        <section id='menu' className='site_container'>
+            <h2 className='section_header'>Our Menu</h2>
+            <div className='banner_image'></div>
+            <div className='content'>
+                {menuSections}
+            </div>
         </section>
     )
 }

@@ -1,16 +1,68 @@
-@import './../../App.scss';
+@import './../../styles/variables.scss';
 
 nav {
+    position: fixed;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: calc(100% - $SSheaderHeightMobile);
+    background-color: $SSblack;
+    transition: right .5s;
+
+    @include sm {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        transition: none;
+    }
+
+    &.open {
+        right: 0;
+        transition: right .5s;
+    }
+
     > ul {
         display: flex;
+        flex-direction: column;
         list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include sm {
+            flex-direction: row;
+            width: auto;
+        }
 
         > li {
-            margin: 0 0 0 15px;
+            margin: 1px 0;
+            width: 100%;
 
-            > a {
+            @include sm {
+                margin: 0;
+                width: auto;
+            }
+
+            > button {
+                display: block;
+                width: 100%;
+                padding: 20px;
+                background-color: $SSmobileMenuButton;
+                border: none;
+                font-family: CopperPlate, serif;
+                font-size: 1.4rem;
                 color: $SSgreen;
+                text-align: left;
                 text-decoration: none;
+
+                @include sm {
+                    padding: 5px;
+                    margin-left: 10px;
+                    background-color: transparent;
+                }
                 
                 &:hover, &:active {
                     color: $SSgreenHighlight

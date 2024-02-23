@@ -1,13 +1,18 @@
 import React from 'react'
 import './nav.scss'
 
-function Nav() {
+function Nav(props) {
+
+    function scrollToSection(section) {
+        document.getElementById(section).scrollIntoView({block: 'start', behavior: 'smooth'})
+    }
+
     return (
-        <nav>
+        <nav className={props.status} onClick={props.changeMenu}>
             <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#menu'>Menu</a></li>
-                <li><a href='#about'>About</a></li>
+                <li><button onClick={()=>{scrollToSection('root')}}>Home</button></li>
+                <li><button onClick={()=>{scrollToSection('menu')}}>Menu</button></li>
+                <li><button onClick={()=>{scrollToSection('about')}}>About</button></li>
             </ul>
         </nav>
     )

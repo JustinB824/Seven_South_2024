@@ -33,11 +33,11 @@ function MenuDataCustom(props) {
     }, [])
 
     const breadLayout = breadList.map((items) => 
-        <li key={items.id}>{items.bread} <span>{items.price}</span></li>
+        <li key={items.id}><p className='custom_item'>{items.bread}</p> <p className='price'>{items.price}</p></li>
     )
     const menuLayout = menuList.map((categories, i) => (
         <div key={i}>
-            <h4>{categories[0]}</h4>
+            <h4 className='lato-bold'>{categories[0]}</h4>
             <ul>
                 {categories.slice(1).map((item, i) => (
                     <li key={i}>{item}</li>
@@ -47,10 +47,11 @@ function MenuDataCustom(props) {
     ))
 
     return (
-        <div>
+        <div className='custom'>
             <h3>{props.title}</h3>
+            <p>Your choice of bread, meat, cheese, and toppings to create your own masterpiece</p>
             <div>
-                <h4>Bread</h4>
+                <h4 className='lato-bold'>Bread</h4>
                 <ul>
                     {breadLayout}
                 </ul>
