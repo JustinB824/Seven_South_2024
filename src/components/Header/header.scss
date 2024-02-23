@@ -1,14 +1,89 @@
-@import './../../App.scss';
+@import './../../styles/variables.scss';
 
 header {
     background-color: $SSblack;
     position: sticky;
     top: 0;
+    height: $SSheaderHeightMobile;
+
+    @include sm {
+        height: $SSheaderHeightDesktop;
+    }
 
     .site_container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px;
+        padding: 0 10px;
+        height: 100%;
+    }
+
+    .logo_image {
+        height: 60px;
+        width: auto;
+
+        @include sm {
+            height: 70px;
+        }
+    }
+
+    .menu_burger {
+        position: relative;
+        width: 24px;
+        height: 19px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: none;
+        border: none;
+
+        @include sm {
+            display: none;
+        }
+
+        > div {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            opacity: 1;
+            background-color: $SSgreen;
+
+            &:first-child {
+                top: 0;
+                transition: opacity .5s;
+            }
+
+            &:last-child {
+                bottom: 0;
+                transition: opacity .5s;
+            }
+                
+            &:nth-child(2), &:nth-child(3) {
+                transition: rotate .5s;
+            }
+        }
+
+        &.open {
+
+            > div {
+                
+                &:first-child, &:last-child {
+                    opacity: 0;
+                    transition: opacity .5s;
+                }
+
+                &:nth-child(2) {
+                    rotate: 45deg;
+                    transition: rotate .5s;
+                }
+
+                &:nth-child(3) {
+                    rotate: -45deg;
+                    transition: rotate .5s;
+                }
+            }
+        }
+
     }
 }

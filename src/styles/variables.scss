@@ -1,0 +1,28 @@
+$SSgreen: #00a651;
+$SSgreenHighlight: #40BC7D;
+$SSorange: #d55e33;
+$SSmobileMenuButton: #222;
+$SSblack: #000;
+$SSwhite: #fff;
+
+$SSmaxWidth: 1100px;
+
+$SSheaderHeightMobile: 80px;
+$SSheaderHeightDesktop: 90px;
+
+
+@mixin sm {
+	@media (min-width: 576px) {
+		@content;
+	}
+}
+@mixin md {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
