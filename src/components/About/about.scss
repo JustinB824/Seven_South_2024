@@ -14,17 +14,31 @@
     h3 {
         margin: 5px 0 20px;
         font-size: 1.2rem;
+
+        @include lg {
+            font-size: 1.4rem;
+        }
     }
 
     h4 {
         margin: 0 0 10px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: $SSgreen;
+
+        @include lg {
+            font-size: 1.4rem;
+        }
     }
 
     p {
         margin: 0 0 20px;
         font-size: 1rem;
+
+        @include lg {
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+        }
     }
 
     .founder_headshot {
@@ -39,6 +53,11 @@
     .contact_link {
         display: block;
         margin: 0 0 10px;
+
+        @include lg {
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
     }
 
     .map {

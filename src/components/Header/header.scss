@@ -16,6 +16,10 @@ header {
         justify-content: space-between;
         padding: 0 10px;
         height: 100%;
+
+        @include md {
+            padding: 0 20px;
+        }
     }
 
     .logo_image {

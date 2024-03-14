@@ -20,6 +20,11 @@
         font-size: 1.5rem;
         line-height: 1.2rem;
         border-bottom: 1px solid $SSgreen;
+
+        @include lg {
+            font-size: 1.8rem;
+            line-height: 1.5rem;
+        }
     }
 
     h4 {
@@ -31,6 +36,10 @@
     ul {
         margin: 0 0 20px;
         padding: 0;
+
+        @include lg {
+            margin: 0 0 40px;
+        }
 
         li {
             margin: 0 0 20px;
@@ -59,31 +68,79 @@
 
                 &.add_on {
                     margin-top: 5px;
-                    flex-basis: 70%;
+                    flex-basis: 100%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     font-size: 1rem;
+
+                    span:first-child {
+                        width: 210px;
+                    }
                 }
             }
         }
     }
 
     .custom {
-            
+
         h4 {
             margin-bottom: 10px;
+            width: 100%;
         }
 
-        li {
-            margin: 0 0 10px;
+        .custom_columns {
 
-            p {
+            ul {
 
-                &.price {
-                    font-size: 1rem;
+                @include sm {
+                    margin: 0 0 30px;
+                }
+                @include lg {
+                    margin: 0 0 40px;
+                }
+        
+                li {
+                    margin: 0 0 10px;
+        
+                    p {
+        
+                        &.price {
+                            font-size: 1rem;
+                        }
+                    }
+            
                 }
             }
     
+            @include sm {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+
+            > div {
+
+                &:first-child {
+                    flex-basis: 100%;
+
+                    @include md {
+                        flex-basis: 66%;
+                    }
+                    @include lg {
+                        flex-basis: 50%;
+                    }
+                }
+
+                @include sm {
+                    flex-basis: 50%;
+                }
+                @include md {
+                    flex-basis: 33%;
+                }
+                @include lg {
+                    flex-basis: 25%;
+                }
+        }
         }
     }
 }

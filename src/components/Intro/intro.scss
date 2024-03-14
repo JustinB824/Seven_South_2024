@@ -22,6 +22,15 @@
             text-shadow: 2px 2px $SSgreen;
             font-size: 3.0rem;
             line-height: 2.8rem;
+
+            @include sm {
+                width: 490px;
+                max-width: none;
+            }
+            @include lg {
+                font-size: 3.5rem;
+                width: max-content;
+            }
         }
     
         > h2 {
@@ -30,6 +39,15 @@
             color: $SSblack;
             text-shadow: 1px 1px $SSgreen;
             font-size: 1.2rem;
+
+            @include sm {
+                width: 490px;
+                max-width: none;
+            }
+            @include lg {
+                font-size: 1.4rem;
+                width: max-content;
+            }
         }
     }
 
@@ -37,11 +55,22 @@
         display: block;
         width: 150px;
         margin: 10px 0 20px;
+
+        @include sm {
+            width: 180px;
+        }
+        @include lg {
+            width: 250px;
+        }
     }
 
     h3 {
         margin: 5px 0;
         font-size: 1.2rem;
+
+        @include lg {
+            font-size: 1.3rem;
+        }
 
         .phone_num {
             display: block;
@@ -52,6 +81,11 @@
     p {
         margin: 5px 0 10px;
         font-size: 1rem;
+
+        @include lg {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
     }
 
     h4 {
@@ -62,5 +96,9 @@
     .hours {
         margin: 5px 0;
         font-size: 1rem;
+
+        @include lg {
+            font-size: 1.1rem;
+        }
     }
 }
