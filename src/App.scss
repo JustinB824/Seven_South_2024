@@ -71,6 +71,10 @@ a {
 
 .content {
   padding: 10px;
+
+  @include md {
+    padding: 20px;
+  }
 }
 
 .section_header {
@@ -83,6 +87,13 @@ a {
   letter-spacing: -0.05rem;
   font-weight: 400;
   color: $SSgreen;
+
+  @include md {
+    padding: 10px 20px;
+  }
+  @include lg {
+    font-size: 2.2rem;
+  }
 }
 
 .banner_image {

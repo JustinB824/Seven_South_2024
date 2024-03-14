@@ -50,13 +50,13 @@ function MenuDataCustom(props) {
         <div className='custom'>
             <h3>{props.title}</h3>
             <p>Your choice of bread, meat, cheese, and toppings to create your own masterpiece</p>
-            <div>
-                <h4 className='lato-bold'>Bread</h4>
-                <ul>
-                    {breadLayout}
-                </ul>
-            </div>
-            <div>
+            <div className='custom_columns'>
+                <div>
+                    <h4 className='lato-bold'>Bread</h4>
+                    <ul>
+                        {breadLayout}
+                    </ul>
+                </div>
                 {menuLayout}
             </div>
         </div>
